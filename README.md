@@ -23,7 +23,12 @@ I would like my custom order to be saved and not change when I refresh the page
 
 #Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+See deployment for notes on how to deploy the project on a live system.
+
+#Prerequisites
+
+Project have dependencies that require Node 4 or higher, together with NPM 3 or higher.
 
 #Installing
 //Todo
@@ -33,7 +38,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 #Built With
 
-Angular2
+Angular2 and AngularCLI. To see AngularCLI documentation refer to README-AngularCli
 
 #Authors
 
