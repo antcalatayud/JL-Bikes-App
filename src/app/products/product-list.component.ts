@@ -29,10 +29,29 @@ export class ProductListComponent implements OnInit {
 			"class": ["endurance", "race"]
 		}
     ]
+	
+	productClass;
 
   constructor() { }
 
   ngOnInit() {
+	  this.getProductClases();
   }
 
+  getProductClases(){
+		this.productClass = [
+		{
+			"id" : 1,
+			"name": "endurance"
+		},
+		{
+			"id" : 1,
+			"name": "race"
+		},
+		{
+			"id" : 3,
+			"name": "confort"
+		}
+	]
+  };
 }

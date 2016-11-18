@@ -2,8 +2,29 @@
     <div class='panel-heading'>
     <h1>{{pageTitle}}</h1>
     </div>
-    <!-- Filter the Products   -->
     <div class='panel-body' *ngIf='products && products.length'>
+		<!-- Filter the Products   -->
+		<div class='row'>
+			<div class='col-md-2'>
+				Filter by:
+			</div>
+			<div class='col-md-4'>
+				<ul>
+					<select>
+						<option value="0">--Select--</option>
+						<option *ngFor="let class of productClass"
+								value= {{class.id}}>{{class.name | uppercase}}
+						</option>
+					</select>
+				</ul>
+			</div>
+		</div>
+	<!-- TODO //if I have time. Display the selection from the filter above -->
+	<!-- <div class='row' > -->
+        <!-- <div class='col-md-6'> -->
+            <!-- <h3>Filtered by:</h3> -->
+        <!-- </div> -->
+    <!-- </div> -->
         <div class='table-responsive'>
             <table class='table'>
                 <thead>
