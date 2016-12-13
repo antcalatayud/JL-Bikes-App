@@ -11,14 +11,18 @@ import { BikeService } from './bikes/bike.service'
 export class ProductListComponent implements OnInit {
   pageTitle: string = "Product List";
   products: IBike[];
-	
+	errorMessage: string;
+  
 	productClass;
 
   constructor (private _bikeService : BikeService) {}
 
   ngOnInit() {
 		this._bikeService.getBikes()
-				.subscribe(products => this.products = products);
+				.subscribe(
+                products => this.products = products['items'],
+					      error => this.errorMessage = <any>error
+    );
 				
 	  this.getProductClases();
   }
