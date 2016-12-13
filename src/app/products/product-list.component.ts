@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IBike } from './bikes/bike';
+
 @Component({
   selector: 'app-product-list',  
   templateUrl: 'product-list.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   pageTitle: string = "Product List";
-  products: any[] =[
+  products: IBike[] =[
 		{
 			"id": 1,
 			"name": "Litening C:68",
