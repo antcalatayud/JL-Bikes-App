@@ -18,14 +18,19 @@ export class ProductListComponent implements OnInit {
   constructor (private _bikeService : BikeService) {}
 
   ngOnInit() {
-		this._bikeService.getBikes()
-				.subscribe(
-                products => this.products = products['items'],
-					      error => this.errorMessage = <any>error
-    );
+		this.getBikes();
 				
 	  this.getProductClases();
   }
+
+	getBikes(){
+			this._bikeService.getBikes()
+				.subscribe(
+                products => this.products = products,
+					      error => this.errorMessage = <any>error
+    );
+
+	}
 
   getProductClases(){
 		this.productClass = [

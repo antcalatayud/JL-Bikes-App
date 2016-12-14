@@ -7,16 +7,16 @@ a description and the class for each bike - I would like to be able to sort the 
 I would like my custom order to be saved and not change when I refresh the page
 
 #User cases
-1. User to see list of bikes with information
+1. User to see list of bikes with information - DONE
 2. User to sort bikes
-3. User to click on bike and get details and larger unit
+3. User to click on bike and get details and larger picture
 4. User to keep custom order when refreshing
 --Assumption cases
 5. Website with welcome page
 6. User to filter by name
 
 #User cases Dependency
-1. List of bikes - Core case
+1. List of bikes - Core case - DONE
 2. Click on bike/Sort bikes - Support user cases
 3. Keep custom order
 

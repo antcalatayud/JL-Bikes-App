@@ -15,7 +15,7 @@ export class BikeService {
 
     getBikes(): Observable<IBike[]>{
         return this._http.get(this._bikesUrl)
-                .map((response : Response) => <IBike[]> response.json())
+                .map((response : Response) => <IBike[]> response.json()['items'])
                 .do(data => console.log('Json Response:' + JSON.stringify(data)))
                 .catch(this.handleError);
     }
