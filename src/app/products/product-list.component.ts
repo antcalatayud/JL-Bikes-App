@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { IBike } from './bikes/bike';
-import { BikeClasses } from './bikes/bikeClasses.enum';
+import { BikeClasses } from './bikes/bike-classes.enum';
 import { BikeService } from './bikes/bike.service'
 
 @Component({
