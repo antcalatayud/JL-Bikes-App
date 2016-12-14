@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 
 import { BikeService } from './products/bikes/bike.service'
+import { BikeClassFilterPipe } from './products/bikes/bike-class-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    BikeClassFilterPipe
 ],
   imports: [
     BrowserModule,

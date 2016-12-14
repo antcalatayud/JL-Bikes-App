@@ -9,14 +9,15 @@
 				Filter by:
 			</div>
 			<div class='col-md-4'>
-				<ul>
+				<input type="text" [(ngModel)]='selectionFilter'>
+				<!--<ul>
 					<select>
 						<option value="0">--Select--</option>
 						<option *ngFor="let class of productClass"
 								value= {{class.id}}>{{class.name | uppercase}}
 						</option>
 					</select>
-				</ul>
+				</ul>-->
 			</div>
 		</div>
 	<!-- TODO //if I have time. Display the selection from the filter above -->
@@ -36,7 +37,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of products | bikeClassFilter: selectionFilter '>
 						<td>
 							<img [src]='product.image.thumb'
 								[title]='product.name | uppercase'
