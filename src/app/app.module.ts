@@ -8,12 +8,14 @@ import { ProductListComponent } from './products/product-list.component';
 
 import { BikeService } from './products/bikes/bike.service'
 import { BikeClassFilterPipe } from './products/bikes/bike-class-filter.pipe';
+import { FilterPipe } from './products/bikes/bike-name-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    BikeClassFilterPipe
+    BikeClassFilterPipe,
+    FilterPipe
 ],
   imports: [
     BrowserModule,

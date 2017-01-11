@@ -15,9 +15,16 @@ export class ProductListComponent implements OnInit {
 	errorMessage: string;
 
 	selectionFilter: string;  
-	productClass :string[];
+	productClasses :string[] = [];
 
-  constructor (private _bikeService : BikeService) {}
+  arr: Array<any>;
+
+  constructor (private _bikeService : BikeService) {
+    this.arr = new Array<any>();
+    this.arr.push(new Element("aaa", "A"));
+    this.arr.push(new Element("bbb", "A"));
+    this.arr.push(new Element("bbb", "B"));
+  }
 
   ngOnInit() {
 		this.getBikes();
@@ -25,7 +32,7 @@ export class ProductListComponent implements OnInit {
 	  this.getProductClases();
   }
 
-	getBikes(){
+	getBikes():void{
 			this._bikeService.getBikes()
 				.subscribe(
                 products => this.products = products,
@@ -34,6 +41,21 @@ export class ProductListComponent implements OnInit {
 
 	}
 
-  getProductClases(){	
+  getProductClases():void{	
+     for (var item in BikeClasses) {
+        if (BikeClasses.hasOwnProperty(item)) {
+            this.productClasses.push(item);
+        }
+     }
   };
+}
+
+class Element {
+  name: string;
+  type: string;
+  
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
 }

@@ -2,11 +2,31 @@
     <div class='panel-heading'>
     <h1>{{pageTitle}}</h1>
     </div>
+	<div>
+      <h3>Unfiltered:</h3>
+      <div *ngFor="let elm of arr">
+        <span>Name: {{elm.name}}</span> | <span>Type: {{elm.type}}</span>
+      </div>
+      
+      <h3>Only Type A:</h3>
+      <div *ngFor="let elm of arr | filter:[['type','A']]">
+        <span>Name: {{elm.name}}</span> | <span>Type: {{elm.type}}</span>
+      </div>
+      
+      <h3>Name bbb and Type B:</h3>
+      <div *ngFor="let elm of arr | filter:[['type','B'], ['name', 'bbb']]">
+        <span>Name: {{elm.name}}</span> | <span>Type: {{elm.type}}</span>
+      </div>
+      
+    </div>
+
+
+
     <div class='panel-body' *ngIf='products && products.length'>
 		<!-- Filter the Products   -->
 		<div class='row'>
 			<div class='col-md-2'>
-				Filter by:
+				<strong>Filter by:</strong>
 			</div>
 			<div class='col-md-4'>
 				<input type="text" [(ngModel)]='selectionFilter'>
@@ -18,6 +38,17 @@
 						</option>
 					</select>
 				</ul>-->
+			</div>
+			<div class='col-md-2'>
+				<strong>Sort by:</strong>
+			</div>
+			<div class='col-md-4'>
+				<select [(ngModel)]="sortByClass">
+				<option value="default">Select a product class...</option>
+				<option *ngFor="let productClass of productClasses" value="{{productClass}}">
+				{{productClass | uppercase}}
+        </option>
+      </select>
 			</div>
 		</div>
 	<!-- TODO //if I have time. Display the selection from the filter above -->
@@ -37,7 +68,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products | bikeClassFilter: selectionFilter '>
+                    <tr *ngFor='let product of products '>
 						<td>
 							<img [src]='product.image.thumb'
 								[title]='product.name | uppercase'
