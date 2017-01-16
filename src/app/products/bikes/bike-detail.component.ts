@@ -34,7 +34,10 @@ export class BikeDetailComponent implements OnInit {
     this._bikeService.getBike(id).subscribe(
       bike => this.bike = bike
     )
-    console.log("1");
+  }
+
+  onBack():void{
+    this._router.navigate(['/products']);
   }
 
 }

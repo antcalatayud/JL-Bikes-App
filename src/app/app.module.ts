@@ -10,6 +10,7 @@ import { ProductListComponent } from './products/product-list.component';
 
 import { BikeService } from './products/bikes/bike.service'
 import { BikeDetailComponent } from './products/bikes/bike-detail.component';
+import { BikeGuardService } from './products/bikes/bike-guard.service';
 
 
 @NgModule({
@@ -25,12 +26,12 @@ import { BikeDetailComponent } from './products/bikes/bike-detail.component';
     HttpModule,
     RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
-      {path: 'bike/:id', component: BikeDetailComponent},
+      {path: 'bike/:id', component: BikeDetailComponent, canActivate:[BikeGuardService]},
       {path: 'home', component: WelcomeComponent},
       {path: '**', redirectTo:'home',pathMatch:'full'}
     ])
   ],
-  providers: [BikeService],
+  providers: [BikeService, BikeGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
