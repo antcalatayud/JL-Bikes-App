@@ -42,7 +42,7 @@
 								[title]='product.name | uppercase'
 								class='productThumb'>
 						</td>
-						<td>{{product.name}}</td>
+						<td><a [routerLink]="['/bike', product.id]">{{product.name}}</a></td>
 						<td>{{product.description}}</td>
 						<td>{{product.class}}</td>
 					</tr>                      

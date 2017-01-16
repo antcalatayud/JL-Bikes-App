@@ -18,6 +18,12 @@ export class BikeService {
                 .catch(this.handleError);
     }
 
+    getBike(id: number): Observable<IBike>{
+        return this.getBikes()
+        .map((bikes: IBike[]) => bikes.find(b => b.id === id))
+        .catch(this.handleError);
+    }
+
     private handleError(error: Response){
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
