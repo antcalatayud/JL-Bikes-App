@@ -4,7 +4,6 @@ import { IBike } from './bikes/bike';
 import { BikeService } from './bikes/bike.service'
 
 @Component({
-  selector: 'app-product-list',  
   templateUrl: 'product-list.component.html',
   styleUrls: ['product-list.component.css']
 })
